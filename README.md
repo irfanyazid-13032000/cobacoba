@@ -4,7 +4,7 @@ Coba coba adalah sebuah repository iseng dari anak muda berumur 22 tahun
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+gunakan git bash untuk mendownload repository gokil ku ini
 
 ```bash
 git clone https://github.com/irfanyazid-13032000/cobacoba.git
