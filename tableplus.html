@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>add row nich</title>
+    <style>
+      #table {
+        height: 10px;
+        width: 1000px;
+        border: 1px black solid;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="table">
+      <tr>
+        <th width="50%">nama</th>
+        <th width="50%">umur</th>
+        <th>
+          <button onclick="addRow()">button loh</button>
+        </th>
+      </tr>
+    </table>
+  </body>
+
+  <script>
+    var table = document.getElementById("table");
+
+    function addRow() {
+      var row = table.insertRow();
+      html = "";
+      html += "<tr>";
+      html += `<td style="text-align:center;">`;
+      html += `<input type="text">`;
+      html += "</td>";
+      html += `<td style="text-align:center;">`;
+      html += `<input type="number">`;
+      html += "</td>";
+      html += "</tr>";
+      row.innerHTML = html;
+    }
+  </script>
+</html>

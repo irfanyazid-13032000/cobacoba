@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hutang nih</title>
+</head>
+<style>
+  table,th{
+    border: solid 1px black;
+  }
+</style>
+<body>
+
+  <label for="">uang</label>
+  <input type="number" id="uang">
+
+  <label for="">bulan</label>
+  <input type="number" id="bulan">
+
+  <button id="hitung">hitung</button>
+
+  <div id="table"></div>
+  
+</body>
+
+
+<script>
+
+ let hitung = document.querySelector('#hitung');
+
+ hitung.addEventListener('click', function () {
+  
+  let uang = document.querySelector('#uang');
+  let bulan = document.querySelector('#bulan');
+
+  let table = document.querySelector('#table');
+  table.innerHTML = bikinTable();
+
+
+
+ })
+
+
+ function bikinTable(){
+  // return '<h1>ahaha</h1>';
+  // return uang.value;
+
+  let perhitungan = `
+  <table>
+  <tr>
+    <th>bulan ke</th>
+    <th>hutang awal</th>
+    <th>bunga 10%</th>
+    <th>hutang akhir</th>
+    </tr>
+  `
+  let membuatLooping = '';
+  let hutangAwal = uang.value;
+  for (let index = 0; index < bulan.value; index++) {
+    // let perhitungan = ;
+  
+
+    let bunga = parseInt(hutangAwal)*10/100
+    let hutangAkhir = parseInt(hutangAwal) + parseInt(bunga)
+    membuatLooping = membuatLooping + `
+    <tr>
+      <td>${index+1}</td>
+      <td>${hutangAwal}</td>
+      <td>${bunga}</td>
+      <td>${hutangAkhir}</td>
+    </tr>
+    `
+
+     hutangAwal = parseInt(hutangAkhir);
+    
+    
+  }
+
+  let akhir = perhitungan+ membuatLooping + '</tabel>'
+
+  return akhir;
+
+ }
+
+  
+</script>
+
+</html>
